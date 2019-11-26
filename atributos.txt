@@ -2,7 +2,6 @@ Back-End:
     - criptografia (se der tempo);
     - inserção no BD;
     - definição de funções;
-    - 
 
 
 Front-End:
@@ -20,6 +19,6 @@ Front-End:
 
 Banco de Dados:
     - contas(autentication sistema);
-    - tcc;
+    - tccs;
     - troca de msgs;
     - historico de ediçoes;
