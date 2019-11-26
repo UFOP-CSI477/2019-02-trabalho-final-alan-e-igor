@@ -15,7 +15,7 @@
   Este projeto terá as seguintes funcionalidades: Adição de disponibilidade de receber alunos para realização de TCC por parte do professor; Adição e de pedido de aluno que já tenham um tema de TCC já escolhido; Ferramenta de postagem de versões do trabalho (avanços, correções); Troca de mensagens rápidas com notificações na tela inicial; etc.
 
 ### 3. Restrições
-  Neste trabalho não serão considerados ...
+  Neste trabalho não serão considerados implementações de segurança.
 
 ### 4. Protótipo
   Protótipos para as páginas (descrever quais páginas) foram elaborados, e podem ser encontrados em...

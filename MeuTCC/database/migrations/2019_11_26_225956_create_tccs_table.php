@@ -15,7 +15,7 @@ class CreateTccsTable extends Migration
     {
         Schema::create('tccs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->
+            $table->binary('arquivo');
             $table->timestamps();
         });
     }
