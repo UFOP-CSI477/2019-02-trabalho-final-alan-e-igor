@@ -1,0 +1,24 @@
+Back-End:
+    - criptografia (se der tempo);
+    - inserção no BD;
+    - definição de funções;
+
+
+Front-End:
+    - tela de login;
+    - tela de cadastro;
+    - tela principal:
+        - anuncio oferta e procura de tcc;
+        - eventos proximos;
+    - tcc:
+        - ediçoes do tcc do usuario;
+    - pagina de perfil;
+    - biblioteca:        
+        - historico de outros tcc;
+
+
+Banco de Dados:
+    - contas(autentication sistema);
+    - tccs;
+    - troca de msgs;
+    - historico de ediçoes;
