@@ -1,6 +1,8 @@
-@extends('layouts.app', ['page' => __('Sobre')])
+@extends('layouts.app', ['page' => __('Sobre'), 'pageSlug' => 'users'])
 
-@section('pageTitle', 'Sobre')
+@section('titulo')
+   - Sobre
+@endsection
 
 @section('content')
     <div class="row">
@@ -20,6 +22,5 @@
                 </div>                
             </div>            
         </div>
-    </div>
-        
+    </div>        
 @endsection
