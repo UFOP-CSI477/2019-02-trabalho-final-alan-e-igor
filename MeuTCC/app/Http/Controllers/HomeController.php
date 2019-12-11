@@ -23,4 +23,8 @@ class HomeController extends Controller
     {
         return view('dashboard');
     }
+
+    public function sobre(){
+        return view('layouts.about');
+    }
 }
