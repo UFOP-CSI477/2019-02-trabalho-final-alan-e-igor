@@ -1,3 +1,4 @@
+drop schema if exists meutcc;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
@@ -16,7 +17,7 @@ CREATE DATABASE IF NOT EXISTS `meutcc` DEFAULT CHARACTER SET utf8 COLLATE utf8_g
 
 /* DROP USER `sistemaweb`@`localhost`; */
 
-CREATE USER `sistemaweb_tcc`@`localhost` identified by "123456";
+CREATE USER if not exists `sistemaweb_tcc`@`localhost` identified by "123456";
 GRANT ALL PRIVILEGES ON meutcc.* TO `sistemaweb_tcc`@`localhost`;
 
 USE meutcc;
