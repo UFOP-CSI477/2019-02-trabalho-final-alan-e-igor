@@ -1,5 +1,0 @@
-{
-    "require": {
-        "laravel-frontend-presets/white-dashboard": "^1.0"
-    }
-}

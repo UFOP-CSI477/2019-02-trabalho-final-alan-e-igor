@@ -7,20 +7,20 @@
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'White Dashboard') }}</title>
+        <title>{{ config('app.name', 'Black Dashboard') }}</title>
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('white') }}/img/apple-icon.png">
-        <link rel="icon" type="image/png" href="{{ asset('white') }}/img/favicon.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('black') }}/img/apple-icon.png">
+        <link rel="icon" type="image/png" href="{{ asset('black') }}/img/favicon.png">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
         <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
         <!-- Icons -->
-        <link href="{{ asset('white') }}/css/nucleo-icons.css" rel="stylesheet" />
+        <link href="{{ asset('black') }}/css/nucleo-icons.css" rel="stylesheet" />
         <!-- CSS -->
-        <link href="{{ asset('white') }}/css/white-dashboard.css?v=1.0.0" rel="stylesheet" />
-        <link href="{{ asset('white') }}/css/theme.css" rel="stylesheet" />
+        <link href="{{ asset('black') }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+        <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet" />
     </head>
-    <body class="white-content {{ $class ?? '' }}">
+    <body class="{{ $class ?? '' }}">
         @auth()
             <div class="wrapper">
                     @include('layouts.navbars.sidebar')
@@ -68,9 +68,12 @@
                     </a>
                 </li>
                 <li class="button-container">
-                    <a href="https://www.creative-tim.com/product/white-dashboard-laravel" target="_blank" class="btn btn-primary btn-block btn-round">Download Now</a>
-                    <a href="https://white-dashboard-laravel.creative-tim.com/docs/getting-started/laravel-setup.html" target="_blank" class="btn btn-default btn-block btn-round">
+                    <a href="https://www.creative-tim.com/product/black-dashboard-laravel" target="_blank" class="btn btn-primary btn-block btn-round">Download Now</a>
+                    <a href="https://demos.creative-tim.com/black-dashboard/docs/1.0/getting-started/introduction.html" target="_blank" class="btn btn-default btn-block btn-round">
                     Documentation
+                    </a>
+                    <a href="https://www.creative-tim.com/product/black-dashboard-pro-laravel" target="_blank" class="btn btn-danger btn-block btn-round">
+                    Upgrade to PRO
                     </a>
                 </li>
                 <li class="header-title">Thank you for 95 shares!</li>
@@ -79,25 +82,25 @@
                     <button id="facebook" class="btn btn-round btn-info"><i class="fab fa-facebook-f"></i> &middot; 50</button>
                     <br>
                     <br>
-                    <a class="github-button" href="https://github.com/creativetimofficial/white-dashboard-laravel" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
+                    <a class="github-button" href="https://github.com/creativetimofficial/black-dashboard-laravel" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star ntkme/github-buttons on GitHub">Star</a>
                 </li>
                 </ul>
             </div>
         </div>
-        <script src="{{ asset('white') }}/js/core/jquery.min.js"></script>
-        <script src="{{ asset('white') }}/js/core/popper.min.js"></script>
-        <script src="{{ asset('white') }}/js/core/bootstrap.min.js"></script>
-        <script src="{{ asset('white') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+        <script src="{{ asset('black') }}/js/core/jquery.min.js"></script>
+        <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
+        <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>
+        <script src="{{ asset('black') }}/js/plugins/perfect-scrollbar.jquery.min.js"></script>
         <!--  Google Maps Plugin    -->
         <!-- Place this tag in your head or just before your close body tag. -->
         {{-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> --}}
         <!-- Chart JS -->
-        {{-- <script src="{{ asset('white') }}/js/plugins/chartjs.min.js"></script> --}}
+        {{-- <script src="{{ asset('black') }}/js/plugins/chartjs.min.js"></script> --}}
         <!--  Notifications Plugin    -->
-        <script src="{{ asset('white') }}/js/plugins/bootstrap-notify.js"></script>
+        <script src="{{ asset('black') }}/js/plugins/bootstrap-notify.js"></script>
 
-        <script src="{{ asset('white') }}/js/white-dashboard.min.js?v=1.0.0"></script>
-        <script src="{{ asset('white') }}/js/theme.js"></script>
+        <script src="{{ asset('black') }}/js/black-dashboard.min.js?v=1.0.0"></script>
+        <script src="{{ asset('black') }}/js/theme.js"></script>
 
         @stack('js')
 
@@ -157,11 +160,11 @@
                         if (sidebar_mini_active == true) {
                             $('body').removeClass('sidebar-mini');
                             sidebar_mini_active = false;
-                            whiteDashboard.showSidebarMessage('Sidebar mini deactivated...');
+                            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
                         } else {
                             $('body').addClass('sidebar-mini');
                             sidebar_mini_active = true;
-                            whiteDashboard.showSidebarMessage('Sidebar mini activated...');
+                            blackDashboard.showSidebarMessage('Sidebar mini activated...');
                         }
 
                         // we simulate the window Resize so the charts will get updated in realtime.
@@ -194,14 +197,6 @@
 
                                 white_color = true;
                             }
-                    });
-
-                    $('.light-badge').click(function() {
-                        $('body').addClass('white-content');
-                    });
-
-                    $('.dark-badge').click(function() {
-                        $('body').removeClass('white-content');
                     });
                 });
             });

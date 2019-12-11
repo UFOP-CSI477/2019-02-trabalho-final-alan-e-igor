@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5ec8c8b189547209d87a19e09225e11f",
+    "content-hash": "087e6a76fba96ad3a452dbe69aa8a404",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -469,17 +469,17 @@
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
-            "name": "laravel-frontend-presets/white-dashboard",
-            "version": "v1.0.1",
+            "name": "laravel-frontend-presets/black-dashboard",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/laravel-frontend-presets/white-dashboard.git",
-                "reference": "86159c548c85829d36a59033cf6724d343c80140"
+                "url": "https://github.com/laravel-frontend-presets/black-dashboard.git",
+                "reference": "5b338c237df9cc1b02739d02743ff6c8a9f83ba9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-frontend-presets/white-dashboard/zipball/86159c548c85829d36a59033cf6724d343c80140",
-                "reference": "86159c548c85829d36a59033cf6724d343c80140",
+                "url": "https://api.github.com/repos/laravel-frontend-presets/black-dashboard/zipball/5b338c237df9cc1b02739d02743ff6c8a9f83ba9",
+                "reference": "5b338c237df9cc1b02739d02743ff6c8a9f83ba9",
                 "shasum": ""
             },
             "require": {
@@ -489,27 +489,27 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "LaravelFrontendPresets\\WhitePreset\\WhitePresetServiceProvider"
+                        "LaravelFrontendPresets\\BlackPreset\\BlackPresetServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "LaravelFrontendPresets\\WhitePreset\\": "src/"
+                    "LaravelFrontendPresets\\BlackPreset\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "description": "Laravel 5.x Front-end preset for white dashboard",
-            "homepage": "https://github.com/creativetimofficial/white-dashboard-laravel",
+            "description": "Laravel 5.x Front-end preset for black dashboard",
+            "homepage": "https://github.com/creativetimofficial/black-dashboard-laravel",
             "keywords": [
+                "Black",
                 "laravel",
-                "preset",
-                "white"
+                "preset"
             ],
-            "time": "2019-09-25T09:47:16+00:00"
+            "time": "2019-09-25T09:50:21+00:00"
         },
         {
             "name": "laravel/framework",

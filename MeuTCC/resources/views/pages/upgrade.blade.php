@@ -5,8 +5,8 @@
   <div class="col-md-8 ml-auto mr-auto">
     <div class="card card-upgrade">
       <div class="card-header text-center">
-        <h4 class="card-title">White Dashboard PRO</h3>
-          <p class="card-category">Are you looking for more components? Please check our Premium Version of White Dashboard PRO.</p>
+        <h4 class="card-title">Black Dashboard PRO</h3>
+          <p class="card-category">Are you looking for more components? Please check our Premium Version of Black Dashboard PRO.</p>
       </div>
       <div class="card-body">
         <div class="table-responsive table-upgrade">
@@ -113,7 +113,7 @@
                   <a href="#" class="btn btn-round btn-default disabled">Current Version</a>
                 </td>
                 <td class="text-center">
-                  <a target="_blank" href="https://www.creative-tim.com/product/white-dashboard-pro-laravel" class="btn btn-round btn-primary">Upgrade to PRO</a>
+                  <a target="_blank" href="https://www.creative-tim.com/product/black-dashboard-pro-laravel" class="btn btn-round btn-primary">Upgrade to PRO</a>
                 </td>
               </tr>
             </tbody>
