@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 Auth::routes();
 
+Route::get('/sobre', ['as' => 'about', 'uses' => 'HomeController@sobre']);
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::group(['middleware' => 'auth'], function () {
