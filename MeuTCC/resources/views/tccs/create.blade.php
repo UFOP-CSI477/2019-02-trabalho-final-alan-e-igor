@@ -1,4 +1,4 @@
-@extends('layout.apps')
+@extends('layouts.app')
 
 @section('content')
     <div class="container-fluid mt--7">
@@ -16,7 +16,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ route('user.update', $user) }}" autocomplete="off">
+                        <form method="post" action="" autocomplete="off">
                             @csrf
                             @method('put')
 
@@ -24,26 +24,33 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('titulo') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="titulo">{{ __('Titulo') }}</label>
-                                    <input type="text" name="titulo" id="titulo" class="form-control form-control-alternative{{ $errors->has('titulo') ? ' is-invalid' : '' }}" placeholder="{{ __('Titulo') }}" value="{{ old('titulo', $user->name) }}" required autofocus>
+                                    <input type="text" name="titulo" id="titulo" class="form-control form-control-alternative" placeholder="{{ __('Titulo') }}"  required autofocus>
                                     @include('alerts.feedback', ['field' => 'titulo'])
                                 </div>
-                                <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-email">{{ __('Email') }}</label>
-                                    <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="{{ old('email', $user->email) }}" required>
-                                    @include('alerts.feedback', ['field' => 'email'])
-                                </div>
-                                <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-password">{{ __('Password') }}</label>
-                                    <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" value="">
-                                    @include('alerts.feedback', ['field' => 'password'])
+                                <div class="form-group{{ $errors->has('area') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-area">{{ __('Area') }}</label>
+                                    <input type="text" name="area" id="input-area" class="form-control form-control-alternative" placeholder="{{ __('Area') }}"  required>
+                                    @include('alerts.feedback', ['field' => 'area'])
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-control-label" for="input-password-confirmation">{{ __('Confirm Password') }}</label>
-                                    <input type="password" name="password_confirmation" id="input-password-confirmation" class="form-control form-control-alternative" placeholder="{{ __('Confirm Password') }}" value="">
+                                    <label class="form-control-label" for="input-ano">{{ __('Ano') }}</label>
+                                    <input type="number" name="ano" id="input-ano" class="form-control form-control-alternative" placeholder="{{ __('Ano') }}" value="">
+                                    @include('alerts.feedback', ['field' => 'ano'])
                                 </div>
-
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-semestre">{{ __('Semestre') }}</label>
+                                    <input type="number" name="semestre" id="input-semestre" class="form-control form-control-alternative" placeholder="{{ __('Semestre') }}" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-professor">{{ __('Professor') }}</label>
+                                    <select class="form-control" name="professor" >
+                                        @foreach ($prof as $x)
+                                            <option value="{{isset($x->id) ? $x->id : ''}}" class="dropdown-menu dropdown-black" >{{isset($x->name) ? $x ->name : ''}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
+                                    <button type="submit" class="btn btn-success mt-4">{{ __('Inscrever') }}</button>
                                 </div>
                             </div>
                         </form>
