@@ -11,4 +11,9 @@ class TccController extends Controller
         $tcc = Tcc::all();
         return view('tccs.tccs', compact('tcc'));
     }
+
+    public function criar(){
+        $tcc = Tcc::all();
+        return view('tccs.create');
+    }
 }

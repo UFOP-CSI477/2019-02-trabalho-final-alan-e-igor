@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/tcc',['as'=>'tcc', 'uses'=>'TccController@index']);
 Route::get('/alunos',['as'=>'alunos', 'uses'=>'PageController@aluno']);
 Route::get('/professores',['as'=>'professores', 'uses'=>'PageController@professor']);
+Route::get('/criarTcc',['as'=>'criar.tcc', 'uses'=>'TccController@criar']);	
 
 Route::group(['middleware' => 'auth'], function () {
 		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
