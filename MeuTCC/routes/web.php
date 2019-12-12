@@ -20,6 +20,8 @@ Route::get('/sobre', ['as' => 'about', 'uses' => 'HomeController@sobre']);
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 Route::get('/tcc',['as'=>'tcc', 'uses'=>'TccController@index']);
+Route::get('/tcc/cadastrar', ['as'=>'tcc.create', 'uses'=>'TccController@create']);
+Route::post('/tcc/salvar', ['as'=>'tcc.salvar', 'uses'=>'TccController@save']);
 Route::get('/alunos',['as'=>'alunos', 'uses'=>'PageController@aluno']);
 Route::get('/professores',['as'=>'professores', 'uses'=>'PageController@professor']);
 
