@@ -4,7 +4,7 @@
 <div class="col-md-12">
     <div class="card ">
         <div class="card-header">
-            <h4 class="card-title">TCC</h4>
+            <h4 class="card-title">TCC's Ofertados</h4>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -24,6 +24,9 @@
                                 <td>{{$t->titulo}}</td>
                                 <td>{{$t->area}}</td>
                                 <td>{{$t->professor->name}}</td>
+                                <td>
+                                    <button class="btn btn-info animation-on-hover" type="button" onclick="{{}}">Inscrever-se</button>
+                                </td>
                             </tr>
                         @endforeach                        
                     </tbody>
