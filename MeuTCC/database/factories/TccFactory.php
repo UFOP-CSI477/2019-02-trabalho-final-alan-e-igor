@@ -8,7 +8,7 @@ use App\Tcc;
 use App\User;
 
 $factory->define(Tcc::class, function (Faker $faker) {
-    $area = ['comp', 'ele', 'sjm', 'pro'];
+    $area = ['Engenharia de Computação','Engenharia de Produção', 'Engenharia Elétrica', 'Sistemas de Informação'];
     $tipo = ['aluno', 'professor'];
     $professor = User::where('tipo','professor')->get();
     $alunos = User::where('tipo','aluno')->get();

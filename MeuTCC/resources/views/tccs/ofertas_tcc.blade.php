@@ -14,22 +14,16 @@
                             <th scope="col">{{ __('ID') }}</th>
                             <th scope="col">{{ __('Titulo') }}</th>
                             <th scope="col">{{ __('Area') }}</th>
-                            <th scope="col">{{ __('Ano') }}</th>
-                            <th scope="col">{{ __('Semestre') }}</th>
                             <th scope="col">{{ __('Professor') }}</th>
-                            <th scope="col">{{ __('Aluno') }}</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($tcc as $x)
+                        @foreach ($ofertas as $t)
                             <tr>
-                                <td>{{$x->id}}</td>
-                                <td>{{$x->titulo}}</td>
-                                <td>{{$x->area}}</td>
-                                <td>{{$x->ano}}</td>
-                                <td>{{$x->semestre}}</td>
-                                <td>{{$x->professor->name}}</td>
-                                <td>{{$x->aluno->name}}</td>                               
+                                <td>{{$t->id}}</td>
+                                <td>{{$t->titulo}}</td>
+                                <td>{{$t->area}}</td>
+                                <td>{{$t->professor->name}}</td>
                             </tr>
                         @endforeach                        
                     </tbody>

@@ -17,7 +17,7 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(User::class, function (Faker $faker) {
-    $area = ['comp', 'ele', 'sjm', 'pro'];
+    $area = ['Engenharia de Computação','Engenharia de Produção', 'Engenharia Elétrica', 'Sistemas de Informação'];
     $tipo = ['aluno', 'professor'];
     return [
         'name' => $faker->name,
