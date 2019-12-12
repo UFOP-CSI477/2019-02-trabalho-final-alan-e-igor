@@ -19,7 +19,7 @@ $factory->define(Tcc::class, function (Faker $faker) {
         'professor_id' =>$faker->randomElement($professor),
         'titulo' =>$faker->title,
         'area' => $faker->randomElement($area),
-        'ano' => $faker->randomNumber(2018, 2020),
+        'ano' => $faker->numberBetween(2018, 2020),
         'semestre' =>$faker->numberBetween(1,2), // password
         'arquivo' =>$faker->name,
     ];
