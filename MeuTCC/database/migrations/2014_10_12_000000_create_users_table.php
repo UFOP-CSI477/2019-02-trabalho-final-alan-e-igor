@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('area');
+            $table->enum('area', ['Engenharia de Computação','Engenharia de Produção', 'Engenharia Elétrica', 'Sistemas de Informação']);
             $table->enum('tipo', ['aluno', 'professor']);
             $table->string('matricula')->unique();
             $table->string('email')->unique();
