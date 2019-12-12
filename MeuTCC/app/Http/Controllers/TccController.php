@@ -24,11 +24,12 @@ class TccController extends Controller
     {
         return Tcc::create([
             'name' => $data['name'],
-            'email' => $data['email'],
-            'tipo' => $data['tipo'],
-            'matricula' =>$data['matricula'],
             'area'=> $data[ 'area'],
-            'password' => Hash::make($data['password']),
+            'ano' => $data['ano'],
+            'semestre' => $data['semestre'],
+            'aluno_id' =>$data['aluno_id'],
+            'professor_id' =>$data['professor_id'],
+            'arquivo' => $data['arquivo'],
         ]);
     }
 }

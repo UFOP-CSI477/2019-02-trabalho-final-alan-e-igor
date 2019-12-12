@@ -20,12 +20,15 @@
 
                 <div class="collapse show" id="laravel-examples1">
                     <ul class="nav pl-4">
+
                         <li @if ($pageSlug ?? '' == 'dashboard') class="active " @endif>
                         <a href="{{ route('tcc') }}">
                                 <i class="tim-icons icon-book-bookmark"></i>
                                 <p>{{ __('Anuncios') }}</p>
                             </a>
                         </li>
+
+                        
                         <li @if ($pageSlug ?? '' == 'users') class="active " @endif>
                             <a href="">
                                 <i class="tim-icons icon-bullet-list-67"></i>
