@@ -8,7 +8,7 @@
                     <div class="col-lg-5 col-md-6">
                         <h1 class="text-white">{{ __('Bem vindo!') }}</h1>
                         <p class="text-lead text-light">
-                            {{ __('Faça loguin para utilizar nosso sitemas e facilitar sua comunicação com o professor sobre o seu TCC.') }}
+                            {{ __('Meu TCC: descomplicando a vida de quem pensa em TCC') }}
                         </p>
                     </div>
                 </div>

@@ -50,12 +50,36 @@
                         <div class="input-group{{ $errors->has('matricula') ? ' has-danger' : '' }}">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
-                                    <i class="tim-icons icon-single-02"></i>
+                                    <i class="tim-icons icon-badge"></i>
                                 </div>
                             </div>
                             <input type="text" name="matricula" class="form-control{{ $errors->has('matricula') ? ' is-invalid' : '' }}" placeholder="{{ __('Matricula') }}">
                             @include('alerts.feedback', ['field' => 'matricula'])
                         </div>
+
+
+                        <div class="input-group{{ $errors->has('tipo') ? ' has-danger' : '' }}">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="tim-icons icon-atom"></i>
+                                    </div>
+                                </div>
+                                        <select class="form-control" name="tipo" >
+                                            <option value = "aluno" selected>Aluno</option>
+                                            <option value="professor">Professor</option>
+                                        </select>
+                                @include('alerts.feedback', ['field' => 'tipo'])
+                            </div>
+
+                        <div class="input-group{{ $errors->has('area') ? ' has-danger' : '' }}">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="tim-icons icon-pencil"></i>
+                                    </div>
+                                </div>
+                                <input type="text" name="area" class="form-control{{ $errors->has('area') ? ' is-invalid' : '' }}" placeholder="{{ __('Área / Curso') }}">
+                                @include('alerts.feedback', ['field' => 'area'])
+                            </div>
                         <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
