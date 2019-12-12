@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'id' => 1,
             'name' => 'Admin Admin',
-            'area' => 'admin',
+            'area' => 'Sistemas de Informação',
             'tipo' => 'professor',
             'matricula' => '16.1.6666',
             'email' => 'admin@black.com',
