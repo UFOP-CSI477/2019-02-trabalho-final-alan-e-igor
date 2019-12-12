@@ -25,11 +25,11 @@
                             <tr>
                                 <td>{{$x->id}}</td>
                                 <td>{{$x->titulo}}</td>
-                                <td>{{$x->titulo}}</td>
+                                <td>{{$x->area}}</td>
                                 <td>{{$x->ano}}</td>
                                 <td>{{$x->semestre}}</td>
-                                <td>{{$x->professor_id}}</td>
-                                <td>{{$x->aluno_id}}</td>                               
+                                <td>{{$x->professor->name}}</td>
+                                <td>{{$x->aluno->name}}</td>                               
                             </tr>
                         @endforeach                        
                     </tbody>
