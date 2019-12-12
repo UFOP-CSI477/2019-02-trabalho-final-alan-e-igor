@@ -14,8 +14,8 @@ class CreateProgressosTable extends Migration
     public function up()
     {
         Schema::create('progressos', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('tcc_id')->unsigned();
+            $table->bigIncrements('id');
+            $table->bigInteger('tcc_id')->unsigned();
             $table->string('mensagem');
             $table->string('versao');
             $table->timestamps();

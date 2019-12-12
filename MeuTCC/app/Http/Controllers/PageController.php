@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\User;
 
 class PageController extends Controller
 {
@@ -72,5 +73,16 @@ class PageController extends Controller
     public function upgrade()
     {
         return view('pages.upgrade');
+    }
+
+    public function aluno(){
+        $alunos = User::where('tipo','aluno')->orderBy('area', 'ASC')->orderBy('name','ASC')->get();
+        return view('users.aluno', compact('alunos'));
+    }
+
+    
+    public function professor(){
+        $professor = User::where('tipo','professor')->orderBy('area', 'ASC')->orderBy('name','ASC')->get();
+        return view('users.professores', compact('professor'));
     }
 }

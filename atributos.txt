@@ -5,8 +5,6 @@ Back-End:
 
 
 Front-End:
-    - tela de login;
-    - tela de cadastro;
     - tela principal:
         - anuncio oferta e procura de tcc;
         - eventos proximos;

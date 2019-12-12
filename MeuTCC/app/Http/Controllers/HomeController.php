@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Tcc;
 
 class HomeController extends Controller
 {
@@ -27,4 +28,5 @@ class HomeController extends Controller
     public function sobre(){
         return view('layouts.about');
     }
+    
 }

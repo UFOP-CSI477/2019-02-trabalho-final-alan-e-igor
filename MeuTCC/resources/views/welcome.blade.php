@@ -11,7 +11,7 @@
                             {{ __('Meu TCC: descomplicando a vida de quem pensa em TCC') }}
                         </p>
                     </div>
-                </div>
+                </div>                
             </div>
         </div>
     </div>

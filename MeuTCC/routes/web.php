@@ -19,6 +19,10 @@ Auth::routes();
 Route::get('/sobre', ['as' => 'about', 'uses' => 'HomeController@sobre']);
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
+Route::get('/tcc',['as'=>'tcc', 'uses'=>'TccController@index']);
+Route::get('/alunos',['as'=>'alunos', 'uses'=>'PageController@aluno']);
+Route::get('/professores',['as'=>'professores', 'uses'=>'PageController@professor']);
+
 Route::group(['middleware' => 'auth'], function () {
 		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
 		Route::get('maps', ['as' => 'pages.maps', 'uses' => 'PageController@maps']);
