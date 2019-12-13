@@ -47,6 +47,7 @@
                             <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Nome') }}">
                             @include('alerts.feedback', ['field' => 'name'])
                         </div>
+                        
                         <div class="input-group{{ $errors->has('matricula') ? ' has-danger' : '' }}">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
@@ -56,7 +57,6 @@
                             <input type="text" name="matricula" class="form-control{{ $errors->has('matricula') ? ' is-invalid' : '' }}" placeholder="{{ __('Matricula') }}">
                             @include('alerts.feedback', ['field' => 'matricula'])
                         </div>
-
 
                         <div class="input-group{{ $errors->has('tipo') ? ' has-danger' : '' }}">
                                 <div class="input-group-prepend">
@@ -69,17 +69,23 @@
                                             <option value="professor">Professor</option>
                                         </select>
                                 @include('alerts.feedback', ['field' => 'tipo'])
-                            </div>
-
+                        </div>
+                        
                         <div class="input-group{{ $errors->has('area') ? ' has-danger' : '' }}">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="tim-icons icon-pencil"></i>
-                                    </div>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <i class="tim-icons icon-pencil"></i>
                                 </div>
-                                <input type="text" name="area" class="form-control{{ $errors->has('area') ? ' is-invalid' : '' }}" placeholder="{{ __('Área / Curso') }}">
-                                @include('alerts.feedback', ['field' => 'area'])
                             </div>
+                                    <select class="form-control" name="area" >
+                                        <option value = "Engenharia de Computação" selected>Engenharia de Computação</option>
+                                        <option value = "Engenharia Elétrica">Engenharia Elétrica</option>
+                                        <option value = "Engenharia de Produção">Engenharia de Produção</option>
+                                        <option value = "Sistemas de Informação">Sistemas de Informação</option>
+                                    </select>
+                            @include('alerts.feedback', ['field' => 'tipo'])
+                        </div>
+
                         <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
@@ -89,6 +95,7 @@
                             <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}">
                             @include('alerts.feedback', ['field' => 'email'])
                         </div>
+
                         <div class="input-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
@@ -98,6 +105,7 @@
                             <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Senha') }}">
                             @include('alerts.feedback', ['field' => 'password'])
                         </div>
+
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
@@ -107,6 +115,7 @@
                             <input type="password" name="password_confirmation" class="form-control" placeholder="{{ __('Confirmar Senha') }}">
                         </div>
                     </div>
+
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary btn-round btn-lg">{{ __('Cadastrar') }}</button>
                     </div>
