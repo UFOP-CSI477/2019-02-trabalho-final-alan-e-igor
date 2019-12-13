@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Oferta;
 use Illuminate\Http\Request;
 use App\Tcc;
 use App\User;
