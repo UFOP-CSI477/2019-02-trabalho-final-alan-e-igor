@@ -15,13 +15,13 @@ class CreateTccsTable extends Migration
     {
         Schema::create('tccs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('aluno_id')->unsigned();
+            $table->bigInteger('aluno_id')->unsigned()->unique();
             $table->bigInteger('professor_id')->unsigned();
             $table->string('titulo', 100);
             $table->string('area');
             $table->smallInteger('ano');
             $table->unsignedTinyInteger('semestre');
-            $table->binary('arquivo');
+            $table->binary('arquivo')->nullable();
             $table->timestamps();
             $table->foreign('aluno_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('professor_id')->references('id')->on('users')->onDelete('cascade');

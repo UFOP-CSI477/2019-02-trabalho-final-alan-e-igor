@@ -16,9 +16,9 @@
                         </div>
                     </div>
                     <div class="card-body">
-                    <form method="post" action="{{route('tccs.inscricao', $oferta->id)}}" autocomplete="off">
+                    <form method="post"  action="{{route('tccs.inscricao', $oferta)}}" autocomplete="off" >
                             @csrf
-
+                    <input name="professor_id" value="{{$oferta->professor->id}}" hidden>
                             <h6 class="heading-small text-muted mb-4">{{ __('Informaçoes sobre o trabalho') }}</h6>
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('titulo') ? ' has-danger' : '' }}">
@@ -38,7 +38,7 @@
                                     <textarea class="form-control" rows="3" disabled>{{$oferta->descricao}}</textarea>
                                   </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4">{{ __('Inscrever') }}</button>
+                                    <button type="submit" class="btn btn-success mt-4" >{{ __('Inscrever') }}</button>
                                 </div>
                             </div>
                         </form>
