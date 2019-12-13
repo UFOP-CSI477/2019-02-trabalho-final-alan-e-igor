@@ -68,4 +68,29 @@ class TccController extends Controller
         }
     }
 
+    public function createOffer(Request $professor_id){
+        $dados = Request::all();
+        $prof = $professor_id->input('professor_id');
+       
+        
+        $data = now();
+
+        if($data->month >6){
+            $semestre = '2';
+        }else{
+            $semestre = '1';
+        }       
+          
+        DB::table('ofertas')->insert([
+            'titulo' => $dados->titulo,
+            'area' => $dados->area,
+            'ano' => $data->year,
+            'semestre' => $semestre,
+            'professor_id' => $prof,
+            'created_at' => now(),
+            'updated_at' => now()
+            ]);
+        
+    }
+
 }

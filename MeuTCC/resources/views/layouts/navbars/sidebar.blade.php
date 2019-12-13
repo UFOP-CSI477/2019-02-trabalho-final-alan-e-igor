@@ -13,10 +13,10 @@
             
             <li @if ($pageSlug ?? '' == 'dashboard') class="active " @endif>
                 <a href="{{ route('tcc') }}">
-                        <i class="tim-icons icon-book-bookmark"></i>
-                        <p>{{ __('Anuncios') }}</p>
-                    </a>
-                </li>
+                    <i class="tim-icons icon-book-bookmark"></i>
+                    <p>{{ __('Anuncios') }}</p>
+                </a>
+            </li>
 
             <li>
                 <a data-toggle="collapse" href="#laravel-examples2" aria-expanded="true">
@@ -42,6 +42,15 @@
                     </ul>
                 </div>
             </li>
+
+          
+            <li @if ($pageSlug ?? '' == 'dashboard') class="active " @endif>
+                <a href="{{ route('professor.ofertaTcc') }}">
+                    <i class="tim-icons icon-book-bookmark"></i>
+                    <p>{{ __('Ofertar TCC') }}</p>
+                </a>
+            </li>
+           
 {{--             
             <li>
                 <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">

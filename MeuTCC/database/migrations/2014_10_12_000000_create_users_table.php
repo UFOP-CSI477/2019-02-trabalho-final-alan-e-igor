@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->enum('area', ['Engenharia de Computação','Engenharia de Produção', 'Engenharia Elétrica', 'Sistemas de Informação']);
-            $table->enum('tipo', ['aluno', 'professor']);
+            $table->enum('tipo', ['Aluno', 'Professor']);
             $table->string('matricula')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

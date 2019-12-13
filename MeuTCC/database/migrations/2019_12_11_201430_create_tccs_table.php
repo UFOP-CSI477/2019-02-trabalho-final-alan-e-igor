@@ -15,7 +15,7 @@ class CreateTccsTable extends Migration
     {
         Schema::create('tccs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('aluno_id')->unsigned()->unique();
+            $table->bigInteger('aluno_id')->unsigned();
             $table->bigInteger('professor_id')->unsigned();
             $table->string('titulo', 100);
             $table->string('area');
