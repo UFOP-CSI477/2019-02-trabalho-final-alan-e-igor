@@ -21,7 +21,7 @@ class CreateTccsTable extends Migration
             $table->string('area');
             $table->smallInteger('ano');
             $table->unsignedTinyInteger('semestre');
-            $table->binary('arquivo')->nullable();
+            $table->string('arquivo')->nullable();
             $table->timestamps();
             $table->foreign('aluno_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('professor_id')->references('id')->on('users')->onDelete('cascade');

@@ -27,8 +27,9 @@ Route::get('/ofertaTcc',['as'=>'professor.ofertaTcc', 'uses'=>'ProfessorControll
 Route::post('/ofertaTcc',['as'=>'professor.ofertaTcc.submit', 'uses'=>'ProfessorController@createOffer']);
 
 Route::get('/tcc/schedule/editar',['uses' =>'TccController@show', 'as'=> 'tcc.schedule.show']);
+Route::get('/tcc/schedule/view',['uses' =>'TccController@view', 'as'=> 'tcc.schedule.view']);
 Route::get('/tcc/schedule/editar/{id}',['uses' =>'TccController@editar', 'as'=> 'tcc.schedule.editar']);
-Route::put('/tcc/schedule/atualizar/{id}',['uses' =>'TccController@atualizar', 'as'=> 'tcc.schedule.atualizar']);
+Route::get('/tcc/schedule/atualizar/{id}',['uses' =>'TccController@atualizar', 'as'=> 'tcc.schedule.atualizar']);
 
 
 Route::get('/tcc',['as'=>'tcc', 'uses'=>'TccController@index']);

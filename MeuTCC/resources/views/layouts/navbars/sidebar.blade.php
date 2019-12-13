@@ -11,53 +11,66 @@
                 </a>
             </li>
             
-            <li @if ($pageSlug ?? '' == 'dashboard') class="active " @endif>
-                <a href="{{ route('tcc') }}">
-                    <i class="tim-icons icon-book-bookmark"></i>
-                    <p>{{ __('Anuncios') }}</p>
+            @if(auth()->user()->tipo == 'Aluno')
+                <li @if ($pageSlug ?? '' == 'dashboard') class="active " @endif>
+                    <a href="{{ route('tcc') }}">
+                        <i class="tim-icons icon-book-bookmark"></i>
+                        <p>{{ __('Anuncios') }}</p>
+                    </a>
+                </li>
+            @endif
+
+            @if(auth()->user()->tipo == 'Professor')
+                <li @if ($pageSlug ?? '' == 'dashboard') class="active " @endif>
+                    <a href="{{ route('alunos') }}">
+                        <i class="tim-icons icon-book-bookmark"></i>
+                        <p>{{ __('Alunos') }}</p>
+                    </a>
+                </li>
+            @else
+            <li @if ($pageSlug ?? '' == 'users') class="active " @endif>
+                <a href="{{ route('professores') }}">
+                    <i class="tim-icons icon-bullet-list-67"></i>
+                    <p>{{ __('Professores') }}</p>
                 </a>
             </li>
-
+            @endif
             <li>
-                <a data-toggle="collapse" href="#laravel-examples2" aria-expanded="true">
+                <a data-toggle="collapse" href="#laravel-examples3" aria-expanded="true">
                     <i class="tim-icons icon-single-02" ></i>
-                    <span class="nav-link-text" >{{ __('Alunos e Professores') }}</span>
+                    <span class="nav-link-text" >{{ __('Area de Trabalho') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
 
-                <div class="collapse show" id="laravel-examples2">
+                <div class="collapse show" id="laravel-examples3">
                     <ul class="nav pl-4">
-                        <li @if ($pageSlug ?? '' == 'dashboard') class="active " @endif>
-                        <a href="{{ route('alunos') }}">
-                                <i class="tim-icons icon-book-bookmark"></i>
-                                <p>{{ __('Alunos') }}</p>
+                            @if(auth()->user()->tipo == 'Professor')
+                            <li class="active ">
+                                <a href="{{ route('professor.ofertaTcc') }}">
+                                    <i class="tim-icons icon-book-bookmark"></i>
+                                    <p>{{ __('Ofertar TCC') }}</p>
+                                </a>
+                            </li>
+                       @endif
+                        <li class="active ">
+                            <a href="{{ route('tcc.schedule.show') }}">
+                                <i class="tim-icons icon-pencil"></i>
+                                <p>{{ __('Atualizar Trabalho') }}</p>
                             </a>
                         </li>
-                        <li @if ($pageSlug ?? '' == 'users') class="active " @endif>
-                            <a href="{{ route('professores') }}">
-                                <i class="tim-icons icon-bullet-list-67"></i>
-                                <p>{{ __('Professores') }}</p>
-                            </a>
 
+                        <li class="active ">
+                            <a href="{{ route('tcc.schedule.view') }}">
+                                <i class="tim-icons icon-pencil"></i>
+                                <p>{{ __('Trabalhos em andamento') }}</p>
+                            </a>
                         </li>
+
                     </ul>
                 </div>
             </li>
-
           
-            <li class="active ">
-                <a href="{{ route('professor.ofertaTcc') }}">
-                    <i class="tim-icons icon-book-bookmark"></i>
-                    <p>{{ __('Ofertar TCC') }}</p>
-                </a>
-            </li>
            
-            <li class="active ">
-                <a href="{{ route('tcc.schedule.show') }}">
-                    <i class="tim-icons icon-pencil"></i>
-                    <p>{{ __('Ofertar TCC') }}</p>
-                </a>
-            </li>
 {{--             
             <li>
                 <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">

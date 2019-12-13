@@ -10,43 +10,27 @@
                             <div class="col-8">
                                 <h3 class="mb-0">{{ __('Adicionar um novo trabalho') }}</h3>
                             </div>
-                            <div class="col-4 text-right">
-                                <a href="{{ route('tcc') }}" class="btn btn-sm btn-primary">{{ __('Voltar para a lista') }}</a>
-                            </div>
                         </div>
                     </div>
                     <div class="card-body">
 
-                        <form method="post"  action="" autocomplete="off" >
+                    <form method="post"  action="{{route('tcc.schedule.atualizar')}}" autocomplete="off" >
                             @csrf
                             <div class="form-group col-md-6">
                                 <label for="inputEmail4">Titulo</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="Titulo">
+                                <input type="text" class="form-control" name="titulo" placeholder="Titulo">
                             </div>
   
                             <div class="form-group col-md-6">
                                 <label >Descrição</label>
-                                <input type="text" class="form-control" id="inputEmail4" placeholder="Descrição">
+                                <input type="text" class="form-control" name="descricao" placeholder="Descrição">
                             </div>
                             <div class="form-group">
                                 <label >Menssagem</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" name="mensagem" rows="3"></textarea>
                             </div>
 
-                            
-    
-                            <div class="form-group col-md-6">
-                                <label >Menssagem</label>
-                                <div class="input-group-prepend">
-                                    
-                                </div>
-                                <div class="form-group">
-                                  <input type="file" class="form-group"  aria-describedby="inputGroupFileAddon01">
-                                  <label class="form-control" for="inputGroupFile01">Escolha o arquivo</label>
-                                </div>
-                              </div>
-                            
-                            <button type="button" class="btn btn-info">Adicionar Versão</button>
+                            <button type="submit"  class="btn btn-info">Adicionar Versão</button>
                         </form>
                     </div>
                 </div>

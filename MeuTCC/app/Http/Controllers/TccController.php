@@ -9,6 +9,8 @@ use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use App\Tcc;
+use App\User;
 
 class TccController extends Controller
 {
@@ -70,37 +72,35 @@ class TccController extends Controller
     {
         return view('tccs.show');
     }
-    public function editar($id)
+    public function atualizar(Request $dados)
     {
-        $registro = Curso::find($id);
 
-        return view('admin.cursos.editar', compact('registro'));
+        $usuario = User::all();        
+        
+        $tcc = DB::table('tccs')->where('tccs.aluno_id','=', auth()->user()->id )->get();
+        
+
+        
+        dd($tcc);        
+        
+        
+
+
+        DB::table('progressos')->insert([
+            'mensagem' => $dados->mensagem,
+            'versao' => $dados->versao,
+            'tcc_id' => $tcc_id,
+            'created_at' => now(),
+            'updated_at' => now()
+            ]);
+
+            return redirect()->route('home');
+
     }
 
-    public function atualizar ( Request $req, $id)
-    {
-        $dados = $req->all();
-        
-        if(isset($dados['publicado'])){
-
-            $dados['publicado'] = 'sim';
-        }else{
-            $dados['publicado'] = 'nao';
-        }
-
-        if($req->hasFile('imagem')){
-            $imagem = $req->file('imagem');
-            $num = rand(1111,9999);
-            $dir = "img/cursos/";
-            $ex = $imagem->guessClientExtension();
-            $nomeImagem = "imagem_".$num.".".$ex;
-            $imagem->move($dir, $nomeImagem);
-            $dados['imagem'] = $dir.$nomeImagem;
-        }
-
-        Curso::find($id)->update($dados);
-
-        return redirect()->route('admin.cursos');
+    public function view(){
+        $tcc = Tcc::all();
+        return view('tccs.showCreated', compact('tcc'));
     }
 
 }
