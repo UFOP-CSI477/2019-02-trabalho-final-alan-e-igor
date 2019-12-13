@@ -19,9 +19,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="dropdown nav-item">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                        <div class="photo">
-                            <img src="{{ asset('black') }}/img/anime3.png" alt="{{ __('Profile Photo') }}">
-                        </div>
+                        <label >{{ __(Auth::user()->name) }}</label>
                         <b class="caret d-none d-lg-block d-xl-block"></b>
                         <p class="d-lg-none">{{ __('Log out') }}</p>
                     </a>
