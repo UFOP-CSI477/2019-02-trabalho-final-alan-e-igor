@@ -38,19 +38,26 @@
                                 <i class="tim-icons icon-bullet-list-67"></i>
                                 <p>{{ __('Professores') }}</p>
                             </a>
+
                         </li>
                     </ul>
                 </div>
             </li>
 
           
-            <li @if ($pageSlug ?? '' == 'dashboard') class="active " @endif>
+            <li class="active ">
                 <a href="{{ route('professor.ofertaTcc') }}">
                     <i class="tim-icons icon-book-bookmark"></i>
                     <p>{{ __('Ofertar TCC') }}</p>
                 </a>
             </li>
            
+            <li class="active ">
+                <a href="{{ route('tcc.schedule.show') }}">
+                    <i class="tim-icons icon-pencil"></i>
+                    <p>{{ __('Ofertar TCC') }}</p>
+                </a>
+            </li>
 {{--             
             <li>
                 <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">

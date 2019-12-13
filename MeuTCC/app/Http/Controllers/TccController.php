@@ -44,53 +44,63 @@ class TccController extends Controller
         
         $oferta = Oferta::find($id_oferta);
           try{  
-        DB::table('tccs')->insert([
-            'titulo' => $oferta->titulo,
-            'area' => $oferta->area,
-            'ano' => $data->year,
-            'semestre' => $semestre,
-            'aluno_id' => Auth::user()->id,
-            'professor_id' => $professor_id,
-            'arquivo'=> null,
-            'created_at' => now(),
-            'updated_at' => now()
-            ]);
-        
+            DB::table('tccs')->insert([
+                'titulo' => $oferta->titulo,
+                'area' => $oferta->area,
+                'ano' => $data->year,
+                'semestre' => $semestre,
+                'aluno_id' => Auth::user()->id,
+                'professor_id' => $professor_id,
+                'arquivo'=> null,
+                'created_at' => now(),
+                'updated_at' => now()
+                ]);
+            
+            $dados = Oferta::find($id_oferta);
+            $dados->delete();
 
-        
-        $dados = Oferta::find($id_oferta);
-        $dados->delete();
-
-        return redirect()->route('tcc');
+            return redirect()->route('tcc');
         }catch(QueryException $e){
 
-            return redirect()->route('home');
+           return redirect()->route('home');
         }
     }
 
-    public function createOffer(Request $professor_id){
-        $dados = Request::all();
-        $prof = $professor_id->input('professor_id');
-       
-        
-        $data = now();
+    public function show()
+    {
+        return view('tccs.show');
+    }
+    public function editar($id)
+    {
+        $registro = Curso::find($id);
 
-        if($data->month >6){
-            $semestre = '2';
-        }else{
-            $semestre = '1';
-        }       
-          
-        DB::table('ofertas')->insert([
-            'titulo' => $dados->titulo,
-            'area' => $dados->area,
-            'ano' => $data->year,
-            'semestre' => $semestre,
-            'professor_id' => $prof,
-            'created_at' => now(),
-            'updated_at' => now()
-            ]);
+        return view('admin.cursos.editar', compact('registro'));
+    }
+
+    public function atualizar ( Request $req, $id)
+    {
+        $dados = $req->all();
         
+        if(isset($dados['publicado'])){
+
+            $dados['publicado'] = 'sim';
+        }else{
+            $dados['publicado'] = 'nao';
+        }
+
+        if($req->hasFile('imagem')){
+            $imagem = $req->file('imagem');
+            $num = rand(1111,9999);
+            $dir = "img/cursos/";
+            $ex = $imagem->guessClientExtension();
+            $nomeImagem = "imagem_".$num.".".$ex;
+            $imagem->move($dir, $nomeImagem);
+            $dados['imagem'] = $dir.$nomeImagem;
+        }
+
+        Curso::find($id)->update($dados);
+
+        return redirect()->route('admin.cursos');
     }
 
 }

@@ -8,12 +8,11 @@
         <div class="col-xl-12 order-xl-1">
             <div class="card">
                 <div class="card-header">
-                    <form class="form" method="post" action="{{ route('register') }}">
+                    <form class="form" method="post" action="{{ route('professor.ofertaTcc.submit') }}">
                         @csrf
 
                         <div class="card-body">
-                            <input name="professor_id" value="{{Auth::user->id}}" hidden>
-                            <input name="area" value="{{Auth::user->id->area}}" hidden>
+                          
                             <div class="input-group{{ $errors->has('titulo') ? ' has-danger' : '' }}">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">

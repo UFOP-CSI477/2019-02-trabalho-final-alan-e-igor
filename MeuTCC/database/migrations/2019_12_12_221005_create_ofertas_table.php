@@ -15,12 +15,12 @@ class CreateOfertasTable extends Migration
     {
         Schema::create('ofertas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('professor_id')->unsigned();
+            $table->bigInteger('academico')->unsigned();
             $table->string('titulo');
             $table->string('area');
             $table->string('descricao');
             $table->timestamps();
-            $table->foreign('professor_id')->references('id')->on('users');
+            $table->foreign('academico')->references('id')->on('users');
         });
     }
 

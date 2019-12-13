@@ -24,6 +24,12 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
 
 Route::get('/ofertaTcc',['as'=>'professor.ofertaTcc', 'uses'=>'ProfessorController@index']);
+Route::post('/ofertaTcc',['as'=>'professor.ofertaTcc.submit', 'uses'=>'ProfessorController@createOffer']);
+
+Route::get('/tcc/schedule/editar',['uses' =>'TccController@show', 'as'=> 'tcc.schedule.show']);
+Route::get('/tcc/schedule/editar/{id}',['uses' =>'TccController@editar', 'as'=> 'tcc.schedule.editar']);
+Route::put('/tcc/schedule/atualizar/{id}',['uses' =>'TccController@atualizar', 'as'=> 'tcc.schedule.atualizar']);
+
 
 Route::get('/tcc',['as'=>'tcc', 'uses'=>'TccController@index']);
 Route::get('/tcc/cadastrar', ['as'=>'tcc.create', 'uses'=>'TccController@create']);
