@@ -2,10 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Oferta;
 use Illuminate\Http\Request;
-use App\Tcc;
-use App\User;
 use App\Oferta;
 use Illuminate\Support\Facades\Hash;
 
@@ -17,10 +14,21 @@ class TccController extends Controller
         return view('tccs.ofertas_tcc', compact('ofertas'));
     }
 
-    public function criar(){
-        $user = User::all();
-        $tcc = Tcc::all();
-        $prof = Oferta::all();
-        return view('tccs.create', compact('prof'));
+    public function criar($id){
+        
+        //$dados =  Oferta::find($id);
+        //dd($dados);
+        //$oferta = Oferta::all();
+        $oferta = Oferta::find($id);
+
+        return view('tccs.create', compact('oferta'));
     }
+
+    public function inscricao($id)
+    {
+
+        
+        return view('tccs.inscricao');
+    }
+
 }

@@ -14,10 +14,9 @@ $factory->define(Tcc::class, function (Faker $faker) {
     $alunos = User::where('tipo','aluno')->get();
     
     return [
-        'titulo' => $faker->name,
+        'titulo' =>$faker->title,
         'aluno_id' => $faker->randomElement($alunos),
         'professor_id' =>$faker->randomElement($professor),
-        'titulo' =>$faker->title,
         'area' => $faker->randomElement($area),
         'ano' => $faker->numberBetween(2018, 2020),
         'semestre' =>$faker->numberBetween(1,2), // password

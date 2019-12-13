@@ -25,7 +25,7 @@
                                 <td>{{$t->area}}</td>
                                 <td>{{$t->professor->name}}</td>
                                 <td>
-                                    <button class="btn btn-info animation-on-hover" type="button" onclick="{{}}">Inscrever-se</button>
+                                    <a href="{{route('criar.tcc', $t->id)}}" class="btn btn-info animation-on-hover" role="button" aria-disabled="true">Inscrever-se</a>
                                 </td>
                             </tr>
                         @endforeach                        

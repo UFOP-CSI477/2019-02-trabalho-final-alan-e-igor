@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -24,7 +25,8 @@ Route::get('/tcc/cadastrar', ['as'=>'tcc.create', 'uses'=>'TccController@create'
 Route::post('/tcc/salvar', ['as'=>'tcc.salvar', 'uses'=>'TccController@save']);
 Route::get('/alunos',['as'=>'alunos', 'uses'=>'PageController@aluno']);
 Route::get('/professores',['as'=>'professores', 'uses'=>'PageController@professor']);
-Route::get('/criarTcc',['as'=>'criar.tcc', 'uses'=>'TccController@criar']);	
+Route::get('/criarTcc/{id}',['as'=>'criar.tcc', 'uses'=>'TccController@criar']);	
+Route::post('/criarTcc/{id}',['as'=>'tccs.inscricao', 'uses'=>'TccController@inscricao']);
 
 Route::group(['middleware' => 'auth'], function () {
 		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
