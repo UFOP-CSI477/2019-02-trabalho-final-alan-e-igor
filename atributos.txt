@@ -1,12 +1,9 @@
 Back-End:
-    - criptografia (se der tempo);
-    - inserção no BD;
     - definição de funções;
 
 
 Front-End:
     - tela principal:
-        - anuncio oferta e procura de tcc;
         - eventos proximos;
     - tcc:
         - ediçoes do tcc do usuario;
@@ -16,7 +13,5 @@ Front-End:
 
 
 Banco de Dados:
-    - contas(autentication sistema);
-    - tccs;
     - troca de msgs;
     - historico de ediçoes;
