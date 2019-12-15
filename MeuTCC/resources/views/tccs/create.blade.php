@@ -38,7 +38,7 @@
                                     <textarea class="form-control" rows="3" disabled>{{$oferta->descricao}}</textarea>
                                   </div>
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4" >{{ __('Inscrever') }}</button>
+                                    <button type="submit" class="btn btn-success mt-4" onclick="demo.showNotification('top','left')">{{ __('Inscrever') }}</button>
                                 </div>
                             </div>
                         </form>

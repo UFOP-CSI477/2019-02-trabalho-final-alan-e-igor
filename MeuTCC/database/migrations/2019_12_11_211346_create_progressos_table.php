@@ -16,8 +16,8 @@ class CreateProgressosTable extends Migration
         Schema::create('progressos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('tcc_id')->unsigned();
+            $table->string('descricao');
             $table->string('mensagem');
-            $table->string('versao');
             $table->timestamps();
             $table->foreign('tcc_id')->references('id')->on('tccs')->onDelete('cascade');
         });

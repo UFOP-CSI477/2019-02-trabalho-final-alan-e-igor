@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="col-md-12">
+<div class="col-md-8">
     <div class="card ">
         <div class="card-header">
             <h4 class="card-title">TCC's Ofertados</h4>
@@ -25,7 +25,7 @@
                                 <td>{{$t->area}}</td>
                                 <td>{{$t->professor->name}}</td>
                                 <td>
-                                    <a href="{{route('criar.tcc', $t->id)}}" class="btn btn-info animation-on-hover" role="button" aria-disabled="true">Inscrever-se</a>
+                                    <a href="{{route('criar.tcc', $t->id)}}" class="btn btn-info animation-on-hover" role="button" aria-disabled="true" >Inscrever-se</a>
                                 </td>
                             </tr>
                         @endforeach                        

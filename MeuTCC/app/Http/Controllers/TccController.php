@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use App\Oferta;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Carbon;
 use App\Tcc;
 use App\User;
+use App\Oferta;
+use App\Progresso;
 
 class TccController extends Controller
 {
@@ -20,23 +19,67 @@ class TccController extends Controller
         return view('tccs.ofertas_tcc', compact('ofertas'));
     }
 
+    public function view(){
+        $tcc = Tcc::all();
+        return view('tccs.showCreated', compact('tcc'));
+    }
+
+    public function show()
+    {
+        $progresso = Progresso::all();
+
+        $link = DB::select(DB::raw('SELECT * FROM tccs WHERE tccs.professor_id = '.auth()->user()->id));
+
+
+        return view('tccs.show', compact('progresso', 'link'));
+    }
+
+    public function add()
+    {
+        return view('tccs.add');
+    }
+
+    public function salvar(Request $dados)
+    {
+        $dados = $dados->all();
+
+        $tcc = DB::select(DB::raw('SELECT * FROM tccs WHERE tccs.aluno_id = '.auth()->user()->id));
+        
+        $id = $tcc[0]->id;
+
+        $tcc['titulo'] = $dados['titulo'];
+        $tcc['link'] = $dados['link'];
+
+        Tcc::find($id)->update($tcc);
+  
+        sleep(2);
+            
+        return redirect()->route('home');
+        
+    }
+
+
     public function criar($id){
         
-        //$dados =  Oferta::find($id);
-        //dd($dados);
-        //$oferta = Oferta::all();
         $oferta = Oferta::find($id);
 
         return view('tccs.create', compact('oferta'));
     }
 
     public function inscricao(Request $professor_id, $id_oferta)
-    {
+    {   
+        
+        if($tcc = DB::table('tccs')->where('tccs.aluno_id','=', auth()->user()->id)->count()> 0){
+            sleep(2);
+            
+            return redirect()->route('tcc');
+            
+        }
 
         $professor_id = $professor_id->input('professor_id');
         
         $data = now();
-
+        
         if($data->month >6){
             $semestre = '2';
         }else{
@@ -53,54 +96,40 @@ class TccController extends Controller
                 'semestre' => $semestre,
                 'aluno_id' => Auth::user()->id,
                 'professor_id' => $professor_id,
-                'arquivo'=> null,
                 'created_at' => now(),
                 'updated_at' => now()
                 ]);
             
             $dados = Oferta::find($id_oferta);
             $dados->delete();
-
+            sleep(2);
             return redirect()->route('tcc');
         }catch(QueryException $e){
-
+            sleep(2);
+            
            return redirect()->route('home');
         }
     }
 
-    public function show()
-    {
-        return view('tccs.show');
-    }
     public function atualizar(Request $dados)
     {
-
         $usuario = User::all();        
+        $tcc = DB::select(DB::raw('SELECT * FROM tccs WHERE tccs.aluno_id = '.auth()->user()->id));
         
-        $tcc = DB::table('tccs')->where('tccs.aluno_id','=', auth()->user()->id )->get();
-        
-
-        
-        dd($tcc);        
-        
-        
-
+         $var = $tcc[0]->id;
 
         DB::table('progressos')->insert([
+            'descricao' => $dados->descricao,
             'mensagem' => $dados->mensagem,
-            'versao' => $dados->versao,
-            'tcc_id' => $tcc_id,
+            'tcc_id' => $var,
             'created_at' => now(),
             'updated_at' => now()
             ]);
 
+            sleep(2);
             return redirect()->route('home');
 
     }
 
-    public function view(){
-        $tcc = Tcc::all();
-        return view('tccs.showCreated', compact('tcc'));
-    }
 
 }

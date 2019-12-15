@@ -52,6 +52,16 @@
                                 </a>
                             </li>
                        @endif
+
+                       @if(auth()->user()->tipo == 'Aluno')
+                       <li class="active ">
+                            <a href="{{ route('tcc.schedule.add') }}">
+                                <i class="tim-icons icon-book-bookmark"></i>
+                                <p>{{ __('Adicionar Informações') }}</p>
+                            </a>
+                        </li>
+                       @endif
+
                         <li class="active ">
                             <a href="{{ route('tcc.schedule.show') }}">
                                 <i class="tim-icons icon-pencil"></i>

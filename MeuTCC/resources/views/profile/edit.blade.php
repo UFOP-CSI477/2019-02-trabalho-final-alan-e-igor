@@ -5,9 +5,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="title">{{ __('Edit Profile') }}</h5>
+                <h5 class="title">{{ __('Editar perfil de') }} {{auth()->user()->tipo}}</h5>
                 </div>
-                <form method="post" action="{{ route('profile.update') }}" autocomplete="off">
+                <form method="post" action="{{ route('profile.update')}}" autocomplete="off">
                     <div class="card-body">
                             @csrf
                             @method('put')
@@ -15,16 +15,29 @@
                             @include('alerts.success')
 
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
-                                <label>{{ __('Name') }}</label>
+                                <label>{{ __('Nome') }}</label>
                                 <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}">
                                 @include('alerts.feedback', ['field' => 'name'])
                             </div>
 
                             <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-                                <label>{{ __('Email address') }}</label>
-                                <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email address') }}" value="{{ old('email', auth()->user()->email) }}">
+                                <label>{{ __('Email') }}</label>
+                                <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="{{ old('email', auth()->user()->email) }}">
                                 @include('alerts.feedback', ['field' => 'email'])
                             </div>
+
+                            <div class="form-group{{ $errors->has('matricula') ? ' has-danger' : '' }}">
+                                <label>{{ __('Matricula') }}</label>
+                                <input type="text" name="matricula" class="form-control{{ $errors->has('matricula') ? ' is-invalid' : '' }}" placeholder="{{ __('Matricula') }}" value="{{ old('matricula', auth()->user()->matricula) }}" disabled>
+                                @include('alerts.feedback', ['field' => 'matricula'])
+                            </div>
+
+                            <div class="form-group{{ $errors->has('tipo') ? ' has-danger' : '' }}">
+                                <label>{{ __('Nome') }}</label>
+                                <input type="text" name="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Name') }}" value="{{ old('name', auth()->user()->name) }}">
+                                @include('alerts.feedback', ['field' => 'name'])
+                            </div>
+
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-fill btn-primary">{{ __('Save') }}</button>

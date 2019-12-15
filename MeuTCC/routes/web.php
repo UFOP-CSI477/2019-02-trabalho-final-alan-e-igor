@@ -26,10 +26,13 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 Route::get('/ofertaTcc',['as'=>'professor.ofertaTcc', 'uses'=>'ProfessorController@index']);
 Route::post('/ofertaTcc',['as'=>'professor.ofertaTcc.submit', 'uses'=>'ProfessorController@createOffer']);
 
-Route::get('/tcc/schedule/editar',['uses' =>'TccController@show', 'as'=> 'tcc.schedule.show']);
-Route::get('/tcc/schedule/view',['uses' =>'TccController@view', 'as'=> 'tcc.schedule.view']);
-Route::get('/tcc/schedule/editar/{id}',['uses' =>'TccController@editar', 'as'=> 'tcc.schedule.editar']);
-Route::get('/tcc/schedule/atualizar/{id}',['uses' =>'TccController@atualizar', 'as'=> 'tcc.schedule.atualizar']);
+Route::get('/tcc/schedule/add',['as'=> 'tcc.schedule.add', 'uses' =>'TccController@add']);
+Route::put('/tcc/schedule/salvar',['as'=> 'tcc.schedule.salvar', 'uses' =>'TccController@salvar']);
+
+Route::get('/tcc/schedule/show',['as'=> 'tcc.schedule.show', 'uses' =>'TccController@show']);
+Route::get('/tcc/schedule/view',['as'=> 'tcc.schedule.view', 'uses' =>'TccController@view']);
+Route::get('/tcc/schedule/editar',['as'=> 'tcc.schedule.editar' ,'uses' =>'TccController@editar']);
+Route::post('/tcc/schedule/atualizar',['as'=> 'tcc.schedule.atualizar', 'uses' =>'TccController@atualizar', ]);
 
 
 Route::get('/tcc',['as'=>'tcc', 'uses'=>'TccController@index']);
@@ -44,7 +47,6 @@ Route::group(['middleware' => 'auth'], function () {
 		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
 		Route::get('maps', ['as' => 'pages.maps', 'uses' => 'PageController@maps']);
 		Route::get('notifications', ['as' => 'pages.notifications', 'uses' => 'PageController@notifications']);
-		Route::get('rtl', ['as' => 'pages.rtl', 'uses' => 'PageController@rtl']);
 		Route::get('tables', ['as' => 'pages.tables', 'uses' => 'PageController@tables']);
 		Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
 		Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
