@@ -727,7 +727,8 @@ demo = {
 
         $.notify({
             icon: "tim-icons icon-bell-55",
-            message: "Salvo com sucesso!."
+            message: "Salvo com sucesso!"
+
 
         }, {
             type: type[color],

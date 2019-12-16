@@ -46,6 +46,8 @@ class ProfessorController extends Controller
             'updated_at' => now()
             ]);
             
+            sleep(1);
+
             return redirect()->route('home');
     }
 

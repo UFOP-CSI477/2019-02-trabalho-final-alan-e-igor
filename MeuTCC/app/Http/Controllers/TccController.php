@@ -28,8 +28,11 @@ class TccController extends Controller
     {
         $progresso = Progresso::all();
 
-        $link = DB::select(DB::raw('SELECT * FROM tccs WHERE tccs.professor_id = '.auth()->user()->id));
+        $link = DB::select(
+            DB::raw('SELECT * FROM tccs WHERE tccs.professor_id = '
+            .auth()->user()->id.' or aluno_id = '.auth()->user()->id ));
 
+        $link = $link[0];
 
         return view('tccs.show', compact('progresso', 'link'));
     }
@@ -52,7 +55,7 @@ class TccController extends Controller
 
         Tcc::find($id)->update($tcc);
   
-        sleep(2);
+        sleep(1);
             
         return redirect()->route('home');
         
@@ -70,7 +73,7 @@ class TccController extends Controller
     {   
         
         if($tcc = DB::table('tccs')->where('tccs.aluno_id','=', auth()->user()->id)->count()> 0){
-            sleep(2);
+            sleep(1);
             
             return redirect()->route('tcc');
             
@@ -102,10 +105,10 @@ class TccController extends Controller
             
             $dados = Oferta::find($id_oferta);
             $dados->delete();
-            sleep(2);
+            sleep(1);
             return redirect()->route('tcc');
         }catch(QueryException $e){
-            sleep(2);
+            sleep(1);
             
            return redirect()->route('home');
         }
@@ -126,7 +129,7 @@ class TccController extends Controller
             'updated_at' => now()
             ]);
 
-            sleep(2);
+            sleep(1);
             return redirect()->route('home');
 
     }

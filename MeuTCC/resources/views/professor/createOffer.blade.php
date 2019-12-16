@@ -34,7 +34,7 @@
                             </div>
 
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary btn-round btn-lg">{{ __('Cadastrar Trabalho') }}</button>
+                            <button type="submit" class="btn btn-primary btn-round btn-lg" onclick="demo.showNotification('top','left')">{{ __('Cadastrar Trabalho') }}</button>
                         </div>
                     </form>
                 </div>

@@ -12,7 +12,7 @@
                             </div>
                         </div>
                     </div>
-                    @if (true)
+                    @if(isset($link))
                         
                     <div class="card-body">
                     <table class="table tablesorter " id="">
@@ -31,7 +31,7 @@
                             @endforeach                          
                         </tbody>
                         <tfoot>
-                            <td> <a href="{{$link[0]->link}}">{{$link[0]->link}}</a></td>
+                            <td><a href="{{$link->link}}">{{$link->link}}</a></td>
                         </tfoot>
                     </table>
                     </div>
