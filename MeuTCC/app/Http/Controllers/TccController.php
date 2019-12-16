@@ -10,6 +10,7 @@ use App\Tcc;
 use App\User;
 use App\Oferta;
 use App\Progresso;
+use Exception;
 
 class TccController extends Controller
 {
@@ -32,7 +33,12 @@ class TccController extends Controller
             DB::raw('SELECT * FROM tccs WHERE tccs.professor_id = '
             .auth()->user()->id.' or aluno_id = '.auth()->user()->id ));
 
-        $link = $link[0];
+        try{
+            $link = $link[0];
+        }catch(Exception $e){
+            $link = null;
+        }
+            
 
         return view('tccs.show', compact('progresso', 'link'));
     }
