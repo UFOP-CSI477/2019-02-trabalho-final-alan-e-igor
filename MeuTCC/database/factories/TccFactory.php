@@ -20,6 +20,6 @@ $factory->define(Tcc::class, function (Faker $faker) {
         'area' => $faker->randomElement($area),
         'ano' => $faker->numberBetween(2018, 2020),
         'semestre' =>$faker->numberBetween(1,2), // password
-        'arquivo' =>$faker->name,
+        'link' =>$faker->link,
     ];
 });
