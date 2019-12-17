@@ -21,12 +21,12 @@ Route::get('/sobre', ['as' => 'about', 'uses' => 'HomeController@sobre']);
 
 
 Route::group(['middleware' => 'auth'], function () {
-		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
-		Route::get('maps', ['as' => 'pages.maps', 'uses' => 'PageController@maps']);
-		Route::get('notifications', ['as' => 'pages.notifications', 'uses' => 'PageController@notifications']);
-		Route::get('tables', ['as' => 'pages.tables', 'uses' => 'PageController@tables']);
-		Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
-		Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
+		// Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
+		// Route::get('maps', ['as' => 'pages.maps', 'uses' => 'PageController@maps']);
+		// Route::get('notifications', ['as' => 'pages.notifications', 'uses' => 'PageController@notifications']);
+		// Route::get('tables', ['as' => 'pages.tables', 'uses' => 'PageController@tables']);
+		// Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
+		// Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
 
 		Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
